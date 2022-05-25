@@ -124,7 +124,7 @@ const Dashboard = () => {
                     </div>
                 </div>
 
-                <div className="NT-Card mt-4">
+                <div className="NT-Card mt-4" style={{width: '1220px'}}>
                     <Row className='d-flex align-items-center'>
                         <Col className="borderRight" md="4">
                             <p className="mb-0" style={{ fontSize: '20px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>TOTAL VALUE LOCKED</p>
@@ -162,7 +162,7 @@ const Dashboard = () => {
                     </Row>
                 </div>
 
-                <div className="NT-Card mt-5">
+                <div className="NT-Card mt-5" style={{width: '1220px'}}>
                     <Table>
                         <Thead>
                             <Tr>
@@ -207,7 +207,7 @@ const Dashboard = () => {
                     </Table>
                 </div>
 
-                <div className="NT-Card mt-5">
+                <div className="NT-Card mt-5" style={{width: '1220px'}}>
                     <Row>
                         <Col md="3" className="borderRight">
                             <span style={{ fontFamily: 'SF Pro Text Heavy', fontSize: '18px' }}>HOW MUCH CAN I EARN?</span>
@@ -275,7 +275,7 @@ const Dashboard = () => {
                     </Row>
                 </div>
 
-                <div className="NT-Card mt-5">
+                <div className="NT-Card mt-5" style={{width: '1220px'}}>
                     <p className="mb-0" style={{ fontSize: '20px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>TVL OF THE ENTIRE ECOSYSTEM</p>
                     <p style={{ fontSize: '35px', fontFamily: 'SF Pro Text Heavy' }}>525,859,532,875 <span style={{ fontSize: '20px', fontFamily: 'SF Pro Text Heavy' }}>USD</span></p>
 

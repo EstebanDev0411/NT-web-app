@@ -18,7 +18,6 @@ const Navbar = () => {
   return (
     <BsNavbar collapseOnSelect className='' expand='md' variant='dark'>
       <Container>
-        <div></div>
         <BsNavbar.Toggle aria-controls='responsive-navbar-nav' />
         <BsNavbar.Collapse id='responsive-navbar-nav' className='nav-menu-wrap'>
           <Nav role='navigation'>
@@ -38,7 +37,9 @@ const Navbar = () => {
               UTILITY+
             </Link>
             <div style={{ width: '1rem' }}/>
-            <div>
+          </Nav>
+        </BsNavbar.Collapse>
+        <div>
               {isLoggedIn ? (
                 <NavItem onClick={handleLogout} className='custom-link-button custom-nav-auth-button'>
                   Disconnect Wallet
@@ -49,10 +50,9 @@ const Navbar = () => {
                   <span>Connect Wallet</span>
                 </Link>
               )}
-            </div>
-          </Nav>
-        </BsNavbar.Collapse>
+        </div>
       </Container>
+      
     </BsNavbar>
   );
 };

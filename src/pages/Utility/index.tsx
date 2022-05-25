@@ -18,7 +18,7 @@ const Utility = () => {
 
                 <p style={{ fontSize: '15px', fontFamily: 'SF Pro Text Bold', paddingTop: '20px' }}>COMMUNITY FARMING EVENT 🚜</p>
 
-                <div className="NT-Card mt-4">
+                <div className="NT-Card mt-4" style={{width:'1220px'}}>
                     <Row>
                         <Col sm="6">
                             <p className="mb-0" style={{ fontSize: '20px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>CURRENT NearT PRICE</p>
@@ -32,7 +32,7 @@ const Utility = () => {
                     <button className='deposit-free-but'>DEPOSIT NOW & GET FREE NearT</button>
                 </div>
 
-                <div className="NT-Card mt-5">
+                <div className="NT-Card mt-5" style={{width:'1220px'}}>
                     <Row>
                         <Col sm="6">
                             <p className="mb-0" style={{ fontSize: '20px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>YOUR FARMED NearT Tokens</p>
@@ -45,7 +45,7 @@ const Utility = () => {
                     </Row>
                 </div>
 
-                <div className="NT-Card mt-5">
+                <div className="NT-Card mt-5" style={{width:'1220px'}}>
                     <Row>
                         <Col sm="6">
                             <p className="mb-0" style={{ fontSize: '20px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>YOUR CURRENT ALLOCATION VALUE</p>
@@ -58,7 +58,7 @@ const Utility = () => {
                     </Row>
                 </div>
 
-                <div className='NT-Card mt-5'>
+                <div className='NT-Card mt-5' style={{width:'1220px'}}>
                     <Row className='align-items-center'>
                         <Col sm="5">
                             <p className="mb-0" style={{ fontSize: '20px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>HOW MUCH NearT CAN I EARN?</p>
@@ -87,7 +87,7 @@ const Utility = () => {
 
                 <p className='mt-5' style={{ fontSize: '20px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>MONTHLY REWARDS PLUS PROGRAM</p>
 
-                <div className='NT-Card'>
+                <div className='NT-Card' style={{width:'1220px'}}>
                     <Row>
                         <Col sm="6">
                             <p style={{ fontSize: '20px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>NEAR TREASURY REWARDS PLUS PROGRAM</p>

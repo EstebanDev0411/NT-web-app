@@ -22,9 +22,9 @@ const MyPage = () => {
                     </div>
                 </div>
 
-                <Row>
+                <Row style={{width:'1220px'}}>
                     <Col md='7' className='mt-4'>
-                        <div className="NT-Card">
+                        <div className="NT-Card" >
                             <div className='d-flex align-items-center'>
                                 <p className="mb-0" style={{ fontSize: '20px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>TOTAL VALUE</p>
                                 <img className='ml-3' src={warnIcon} alt='warn' />
@@ -99,7 +99,7 @@ const MyPage = () => {
                     </Col>
                 </Row>
 
-                <div className='filter-pad mt-5 d-flex'>
+                <div className='filter-pad mt-5 d-flex' style={{width:'1217px'}}>
                     <input id='All-radio' type='radio' name='filterRadioGroup' value={0} defaultChecked />
                     <label htmlFor='All-radio' style={{ width: '100%', textAlign: 'center', marginBottom: '0px' }}>
                         <div className='tab-but'>
@@ -122,7 +122,7 @@ const MyPage = () => {
                     </label>
                 </div>
 
-                <Row className='mt-3'>
+                <Row className='mt-3' style={{width:'1220px'}}>
                     {
                         coins.map((coin, index) => {
                             return (
