@@ -112,7 +112,10 @@ const Dashboard = () => {
             width: 1,
         },
     };
-
+    const [years, setYears] = useState(10);
+    const handleSlider = (e:any) => {
+        setYears(e.target.value);
+    };
     return (
         <>
             <Container className='mb-5'>
@@ -244,11 +247,14 @@ const Dashboard = () => {
                             </div>
 
                             <div className='mt-5'>
-                                <span style={{ fontFamily: 'SF Pro Text Heavy', fontSize: '22px' }}>10 Years</span>
+                                <span style={{ fontFamily: 'SF Pro Text Heavy', fontSize: '22px' }}>{years} Years</span>
                                 <AirbnbSlider
                                     components={{ Thumb: AirbnbThumbComponent }}
                                     getAriaLabel={(index) => (index === 0 ? 'Minimum price' : 'Maximum price')}
-                                    defaultValue={60}
+                                    defaultValue={10}
+                                    max={10}
+                                    min={0}
+                                    onChange={e => handleSlider(e)}
                                 />
                             </div>
                         </Col>

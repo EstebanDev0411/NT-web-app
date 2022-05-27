@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import externalLink from 'assets/img/External_Link.svg';
 import warnIcon from 'assets/img/warn.svg';
@@ -10,7 +10,11 @@ const MyPage = () => {
 
     const color = ['#F72585', '#000000', '#F9D85E'];
     const progress = [75, 68, 58];
+    const [coinType, setCoinType] = useState(0);
 
+    const handleTab = (value:any) => {
+        setCoinType(value);
+    };
     return (
         <>
             <Container className='mb-5'>
@@ -100,21 +104,21 @@ const MyPage = () => {
                 </Row>
 
                 <div className='filter-pad mt-5 d-flex' style={{width:'1217px'}}>
-                    <input id='All-radio' type='radio' name='filterRadioGroup' value={0} defaultChecked />
+                    <input id='All-radio' type='radio' name='filterRadioGroup' value={0} onClick={() => handleTab(0)} defaultChecked />
                     <label htmlFor='All-radio' style={{ width: '100%', textAlign: 'center', marginBottom: '0px' }}>
                         <div className='tab-but'>
                             ALL
                         </div>
                     </label>
 
-                    <input id='Stable-radio' type='radio' name='filterRadioGroup' value={1} />
+                    <input id='Stable-radio' type='radio' name='filterRadioGroup' value={1} onClick={() => handleTab(1)}/>
                     <label htmlFor='Stable-radio' style={{ width: '100%', textAlign: 'center', marginBottom: '0px' }}>
                         <div className='tab-but'>
                             STABLE
                         </div>
                     </label>
 
-                    <input id='Volatile-radio' type='radio' name='filterRadioGroup' value={2}/>
+                    <input id='Volatile-radio' type='radio' name='filterRadioGroup' value={2} onClick={() => handleTab(2)}/>
                     <label htmlFor='Volatile-radio' style={{ width: '100%', textAlign: 'center', marginBottom: '0px' }}>
                         <div className='tab-but'>
                             VOLATILE
@@ -125,36 +129,39 @@ const MyPage = () => {
                 <Row className='mt-3' style={{width:'1220px'}}>
                     {
                         coins.map((coin, index) => {
-                            return (
-                                <Col sm='6' key={index} style={{ marginTop: '30px' }}>
-                                    <div className='NT-Card'>
-                                        <div className='d-flex justify-content-between align-items-center'>
-                                            <div className='d-flex align-items-center'>
-                                                <img src={coin.url} />
+                            if(coinType === 0 || coin.type === coinType)
+                            {                            
+                                return (
+                                    <Col sm='6' key={index} style={{ marginTop: '30px' }}>
+                                        <div className='NT-Card'>
+                                            <div className='d-flex justify-content-between align-items-center'>
+                                                <div className='d-flex align-items-center'>
+                                                    <img src={coin.url} />
+                                                    <div className='d-flex flex-column ml-4'>
+                                                        <span style={{ fontFamily: 'SF Pro Text Heavy', fontSize: '16px' }}>{coin.identifier}</span>
+                                                        <span style={{ fontFamily: 'SF Pro Text', fontSize: '13px', color: '#CEC0C0' }}>{coin.name}</span>
+                                                    </div>
+                                                </div>
+
                                                 <div className='d-flex flex-column ml-4'>
-                                                    <span style={{ fontFamily: 'SF Pro Text Heavy', fontSize: '16px' }}>{coin.identifier}</span>
-                                                    <span style={{ fontFamily: 'SF Pro Text', fontSize: '13px', color: '#CEC0C0' }}>{coin.name}</span>
+                                                    <span style={{ fontFamily: 'SF Pro Text Bold', fontSize: '13px', color: '#CEC0C0' }}>Savings Balance</span>
+                                                    <span style={{ fontFamily: 'SF Pro Text', fontSize: '13px', color: '#CEC0C0' }}>{'$' + coin.tValue}</span>
+                                                </div>
+
+                                                <div className='d-flex flex-column ml-4'>
+                                                    <span style={{ fontFamily: 'SF Pro Text Bold', fontSize: '13px', color: '#CEC0C0' }}>APY</span>
+                                                    <span style={{ fontFamily: 'SF Pro Text', fontSize: '13px', color: '#CEC0C0' }}>{coin.APY + '%'}</span>
                                                 </div>
                                             </div>
 
-                                            <div className='d-flex flex-column ml-4'>
-                                                <span style={{ fontFamily: 'SF Pro Text Bold', fontSize: '13px', color: '#CEC0C0' }}>Savings Balance</span>
-                                                <span style={{ fontFamily: 'SF Pro Text', fontSize: '13px', color: '#CEC0C0' }}>{'$' + coin.tValue}</span>
-                                            </div>
-
-                                            <div className='d-flex flex-column ml-4'>
-                                                <span style={{ fontFamily: 'SF Pro Text Bold', fontSize: '13px', color: '#CEC0C0' }}>APY</span>
-                                                <span style={{ fontFamily: 'SF Pro Text', fontSize: '13px', color: '#CEC0C0' }}>{coin.APY + '%'}</span>
+                                            <div className='d-flex justify-content-center mt-5 mb-2'>
+                                                <button className='my-page-deposit-but'>Deposit</button>
+                                                <button className='my-page-withdraw-but'>Withdraw</button>
                                             </div>
                                         </div>
-
-                                        <div className='d-flex justify-content-center mt-5 mb-2'>
-                                            <button className='my-page-deposit-but'>Deposit</button>
-                                            <button className='my-page-withdraw-but'>Withdraw</button>
-                                        </div>
-                                    </div>
-                                </Col>
-                            );
+                                    </Col>
+                                );
+                            }                        
                         })
                     }
                 </Row>
