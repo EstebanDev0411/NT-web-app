@@ -114,7 +114,7 @@ const MyPage = () => {
                         </div>
                     </label>
 
-                    <input id='Volatile-radio' type='radio' name='filterRadioGroup' value={2} />
+                    <input id='Volatile-radio' type='radio' name='filterRadioGroup' value={2}/>
                     <label htmlFor='Volatile-radio' style={{ width: '100%', textAlign: 'center', marginBottom: '0px' }}>
                         <div className='tab-but'>
                             VOLATILE
