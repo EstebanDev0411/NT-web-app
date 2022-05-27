@@ -81,7 +81,7 @@ const Dashboard = () => {
             },
             axisTicks: {
                 show: false,
-            },
+            },  
             crosshairs: {
                 show: false
             },
@@ -215,15 +215,24 @@ const Dashboard = () => {
                             <div className='d-flex flex-column mt-5'>
                                 <Dropdown className="w-100" drop='down' style={{ width: '150px' }}>
                                     <Dropdown.Toggle className='token-id-toggle' id="token-id">
-                                        <span style={{ fontFamily: 'SF Pro Text Heavy', fontSize: '22px' }}>STABLE COIN</span>
+                                        <span style={{ fontFamily: 'SF Pro Text Heavy', fontSize: '22px' }}>USDC</span>
                                     </Dropdown.Toggle>
                                     <Dropdown.Menu className="token-id-menu">
-                                        <Dropdown.Item>
+                                        {/* <Dropdown.Item>
                                             <span style={{ fontFamily: 'SF Pro Text ', fontSize: '16px' }}>STABLE COIN</span>
                                         </Dropdown.Item>
                                         <Dropdown.Item>
                                             <span style={{ fontFamily: 'SF Pro Text', fontSize: '16px' }}>VOLATILE COIN</span>
-                                        </Dropdown.Item>
+                                        </Dropdown.Item> */}
+                                        {
+                                            coins.map((coin, index) => {
+                                                return (
+                                                    <Dropdown.Item key={index}>
+                                                        <span style={{fontFamily:'SF Pro Text ', fontSize: '16px'}}>{coin.identifier}</span>
+                                                    </Dropdown.Item>
+                                                );
+                                            })
+                                        }
                                     </Dropdown.Menu>
                                 </Dropdown>
                                 <span style={{ fontFamily: 'SF Pro Text', fontSize: '11px', color: '#CEC0C0' }}>Your Deposit</span>
