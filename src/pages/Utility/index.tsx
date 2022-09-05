@@ -9,7 +9,7 @@ const Utility = () => {
         <>
             <Container className='mb-5'>
                 <div className='d-flex align-items-baseline'>
-                    <p className="page-title"> UTILITY + </p>
+                    <p className="page-title"> UTILITIES + </p>
                     <div style={{ cursor: 'pointer' }}>
                         <span className='ml-3' style={{ fontFamily: 'SF Pro Text Bold', color: '#CEC0C0', fontSize:'13px' }}>Docs</span>
                         <img className='ml-1' src={externalLink} />
